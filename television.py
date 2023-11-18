@@ -19,13 +19,14 @@ class Television:
             self.__status = True
 
     def mute(self):
-        if self.__muted:
-            self.__muted = False
-            self.__volume = self.__temp
-        else:
-            self.__muted = True
-            self.__temp = self.__volume
-            self.__volume = Television.MIN_VOLUME
+        if self.__status:
+            if self.__muted:
+                self.__muted = False
+                self.__volume = self.__temp
+            else:
+                self.__muted = True
+                self.__temp = self.__volume
+                self.__volume = Television.MIN_VOLUME
 
     def channel_up(self):
         if self.__status:
